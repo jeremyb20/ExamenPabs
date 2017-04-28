@@ -1,0 +1,59 @@
+<div ng-cloak="" class="inputdemoErrors" id="registro" ng-app="myApp">
+  <div layout="row" >
+  <md-sidenav layout-align="start center" md-is-locked-open="true"  flex="20">  
+        <button class="sesion" ui-sref="users">Usuario</button>  
+        <button class="sesion" ui-sref="compras">Compras</button> 
+        <button class="sesion" ui-sref="propiedades">Propiedades</button> 
+    </md-sidenav>
+    <md-content flex>
+    <md-toolbar>
+          <h2 class="md-toolbar-tools md-center" >  
+              <span>Propiedades!</span>
+          </h2>
+      </md-toolbar>
+      <md-content>
+              <div class="container md-pad">
+
+              
+
+                <md-input-container>
+                    <label>Buscar propiedad:</label>
+                    <input ng-model="buscar">
+                  </md-input-container>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>ID</th>
+                      <th>Posición</th>
+                      <th>Precio</th>
+                      <th>Renta</th>
+                      <th>Costo de casa</th>
+                      <th>Grupo</th>
+                      <th>Propiedad de:</th>
+                      <th>Mortgaged</th>
+                      <th>ohusecost</th>
+                      <th>oprice</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="x in propiedadCtrl.propiedades | filter:buscar track by $index">
+                      <td ng-model="propiedadCtrl.name" value="{{x.name}}">{{x.name}}</td>
+                      <td>{{x.id}}</td>
+                      <td>{{x.posistion}}</td>
+                      <td ng-model="propiedadCtrl.price" value="{{x.price | currency}}">{{x.price | currency}}</td>
+                      <td>{{x.rent}}</td>
+                      <td>{{x.housecost}}</td>
+                      <td>{{x.group}}</td>
+                      <td>{{x.ownedby}}</td>
+                      <td>{{x.mortgaged}}</td>
+                      <td>{{x.ohousecost}}</td>
+                      <td>{{x.oprice}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+      </md-content>
+        </md-content>  
+  </div>
+</div>

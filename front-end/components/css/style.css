@@ -1,0 +1,257 @@
+md-sidenav.md-default-theme, md-sidenav, md-sidenav.md-default-theme md-content, md-sidenav md-content {
+  background-image:url(../images/bgNav.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  height:100vh;
+}
+#registro md-sidenav md-toolbar{
+  background:transparent;
+}
+#registro{
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+.padd{
+  margin-left:40px;
+  margin-right:40px;
+  float:left;
+}
+.md-padd{
+  margin-top:40px;
+}
+.btn1 {
+  color : rgb(49, 46, 46);
+  background-color: rgba(255, 222, 121, 0.96);
+  border-radius: 10px 0 0 10px;
+  font-size: 16px;
+}
+
+.btn1:not([disabled]):hover {
+  background-color: rgba(107, 103, 91, 0.96);
+  color: white;
+}
+
+.btn1[disabled] {
+  color : rgb(187, 187, 187);
+  background-color: rgba(230, 230, 229, 0.96);
+}
+md-tabs:not(.md-no-tab-content):not(.md-dynamic-height){
+      min-height: 598px;
+}
+md-dialog{
+  padding:20px;
+  width:80%;
+  height:50%;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+.blue {
+  color: #4aa3df; }
+
+.purple {
+  color: #9b59b6; }
+
+.asphalt {
+  color: #34495e; }
+
+.green {
+  color: #1abc9c; }
+
+.orange {
+  color: #e74c3c; }
+
+.cloud {
+  color: #ecf0f1; }
+
+.mb20 {
+  margin-bottom: 20px; }
+
+.mb40 {
+  margin-bottom: 40px; }
+
+.cf:before {
+  content: "";
+  display: table; }
+
+.cf:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.bms header {
+  margin: 40px 0;
+  font-size: 44px;
+  font-weight: bold;
+  color: #e74c3c; }
+
+.bms .input-card {
+  display: block; }
+  .bms .input-card select {
+    width: auto;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #aaa;
+    outline: 0;
+    cursor: pointer;
+    text-align: left;
+    float: left;
+    padding: 9px 20px;
+    box-shadow: 0 0 0 1px #dfe3e7;
+    background: #fff;
+    top: 0;
+    z-index: 1; }
+
+.bms a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  text-decoration: none;
+  vertical-align: baseline;
+  background: 0 0; }
+
+.bms .cta {
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  outline: 0;
+  border: 0;
+  margin-top: 20px; }
+
+.bms .proceed {
+  color: #e74c3c;
+  background: white;
+  border: 2px solid #e74c3c;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .bms .proceed:hover, .bms .proceed:focus {
+    color: white;
+    background: #e74c3c; }
+
+.bms .seatR {
+  margin-right: 6px;
+  margin-top: 4px;
+  font-size: 14px;
+  color: #b3b3b3; }
+
+.bms .seatI {
+  margin: 4px 2px;
+  float: left;
+  width: 21px; }
+
+.bms table a {
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  border-radius: 26%;
+  color: #aaa;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 21px; }
+
+.bms table .available {
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #e74c3c;
+  cursor: pointer; }
+  .bms table .available:hover {
+    background: #e74c3c;
+    color: white; }
+
+.bms table .selected {
+  background: #e74c3c;
+  color: white; }
+
+.bms table .blocked {
+  background: #eaeaea;
+  color: #aaa;
+  box-shadow: 0;
+  border: 0;
+  cursor: default; }
+
+.bms .SRow1 {
+  display: flex; }
+  .bms .SRow1 .itemSeat {
+    margin-left: 15px; }
+
+.bms .seatQuality {
+  width: auto; }
+
+.bms .thankyou .center {
+  display: block;
+  align-items: center;
+  justify-content: center; }
+
+.bms .thankyou a {
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  border-radius: 26%;
+  color: #aaa;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 21px; }
+
+.bms .thankyou .available {
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #e74c3c; }
+  .bms .thankyou .available:hover {
+    background: #e74c3c;
+    color: white; }
+
+.bms .thankyou .selected {
+  background: #e74c3c;
+  color: white; }
+
+.bms .thankyou .blocked {
+  background: #eaeaea;
+  color: #aaa;
+  box-shadow: 0;
+  border: 0;
+  cursor: default; 
+}
+.md-pad{
+	padding:0% 3%;
+}
+ table{
+  border-collapse:collapse;
+}
+table thead th {
+  background-color: rgb(63,81,181);
+  color: #fff;
+  padding: 5px 25px;
+  font-size: 16px;
+  font-weight: normal;
+  border:1px solid #fff;
+}
+
+table tbody td {
+  text-align:center;
+  border:1px solid rgba(0, 0, 0, 0.2);
+}
+.img{
+  height:100px;
+  width:90px;
+}
+.logoTodo{
+  height:100vh;
+}
+.sesion{
+  background:transparent;
+  margin-top:3%;
+  padding:2% 3%;
+  color:#fff;
+  border-color:transparent;
+  font-size:19px;
+}
+.sesion:hover{
+  transition:1s;
+}

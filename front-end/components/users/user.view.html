@@ -1,0 +1,137 @@
+<div ng-cloak="" class="inputdemoErrors" id="registro" ng-app="myApp">
+  <div layout="row" >
+   <md-sidenav layout-align="start center" md-is-locked-open="true"  flex="20"> 
+        <button class="sesion" ui-sref="users">Usuario</button>  
+        <button class="sesion" ui-sref="compras">Compras</button>
+        <button class="sesion" ui-sref="propiedades">Propiedades</button> 
+        
+    </md-sidenav>
+    <md-content flex>
+      <md-toolbar>
+          <h2 class="md-toolbar-tools md-center" >  
+              <span>Registrate es gratis!</span>
+          </h2>
+      </md-toolbar>
+      <md-tabs class="container md-pad" md-stretch-tabs md-selected="selectedIndex">
+          <md-tab class="container md-pad" label="Registro">
+            <form ng-init="money=1000"  name="projectForm" class="container md-pad">
+                    <div layout="row">
+                      <md-input-container flex="50">
+                        <label>ID:</label>
+                        <input required="" name="id" ng-model="usersCtrl.id">
+                        <div ng-messages="projectForm.id.$error">
+                          <div ng-message="required">This is required.</div>
+                        </div>
+                      </md-input-container>
+                    </div> 
+                  <div layout="row">
+                    <md-input-container flex="50">
+                      <label>Nombre </label>
+                      <input required="" name="name" ng-model="usersCtrl.name">
+                      <div ng-messages="projectForm.name.$error">
+                        <div ng-message="required">This is required.</div>
+                      </div>
+                    </md-input-container>
+                  </div>
+                  <div layout="row">
+                    <md-input-container flex="50">
+                      <label>Alias:</label>
+                      <input required="" name="alias" ng-model="usersCtrl.alias">
+                      <div ng-messages="projectForm.alias.$error">
+                        <div ng-message="required">This is required.</div>
+                      </div>
+                    </md-input-container>
+                  </div> 
+                  <div layout="row">
+                    <md-input-container flex="50">
+                      <label>Cantidad de dinero:</label>
+                      <input required="" type="number" ng-value="money" name="money" ng-model="usersCtrl.money">
+                      <div ng-messages="projectForm.money.$error">
+                        <div ng-message="required">This is required.</div>
+                      </div>
+                    </md-input-container>
+                  </div>
+                  <div layout="row">
+                    <div class="col-md-6">
+                      <md-input-container flex="50">
+                        <label>Foto:</label>
+                        <input required="" id="photo" type="file" name="photo" ng-model="photo">
+                      
+                      </md-input-container>
+                    </div>
+                    <div class="col-md-6">
+                      <md-input-container>
+                      <label>Bio:</label>
+                      <input required="" type="button" value="Upload" ng-click="showPicker()" name="bio" ng-model="bio">
+                    </md-input-container>
+                    </div>
+                  </div>
+                  <div>
+                    <md-button class="btn-primary" ng-click="usersCtrl.presave(projectForm)" type="button">Submit</md-button>
+                  </div>
+                </form>
+          </md-tab>
+          <md-tab  label="Usuarios Regisrados">
+              <div class="container md-pad">
+                 <md-input-container>
+                    <label>Buscar Jugador:</label>
+                    <input ng-model="buscar">
+                  </md-input-container>
+                <h2>Jugadores Registrados</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Código</th>
+                      <th>Nombre</th>
+                      <th>Alias</th>
+                      <th>Cantidad de dinero</th>
+                      <th>Foto</th>
+                      <th>Ver Bio</th>
+                      <th>Eliminar usuario</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="x in usersCtrl.users | filter:buscar track by $index">
+                      <td ng-model="usersCtrl.id" value="{{x.id}}">{{x.id}}</td>
+                      <td value="{{x.name}}">{{x.name}}</td>
+                      <td value="{{x.alias}}">{{x.alias}}</td>
+                      <td ng-model="usersCtrl.moneyPrincipal" value="{{x.money | currency}}">{{x.money | currency}}</td>
+                      <td><img class="img" ng-src="{{x.photo}}"></td>
+                      <td><a href="{{x.bio}}" download>Ver bio</a></td>
+                      <!-- <td>{{x.photo}}</td> -->
+                      <td><button ng-click="usersCtrl.delete(x._id)">Eliminar</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          </md-tab>
+         
+
+
+
+         
+      </md-tabs>
+      <!-- <div id="content" ui-view flex> </div> -->
+     </md-content>   
+  </div>
+</div>
+<div ui-view></div>
+<!-- <div layout="column" ng-cloak="" class="inputdemoErrors" ng-app="myApp">
+<div layout="row">
+  
+<md-sidenav layout-align="start center" md-is-locked-open="true"  flex="35">
+  <h2>Es es solo un juego</h2>
+</md-sidenav>
+<md-content layout-padding="">
+    <md-tabs>
+      <md-tab label="Registrar">
+        
+
+      </md-tab>
+      <md-tab label="Realiza Compra">
+        
+      </md-tab>
+    </md-tabs>
+</md-content>
+
+</div> -->

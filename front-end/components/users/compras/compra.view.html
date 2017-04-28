@@ -1,0 +1,76 @@
+<div ng-cloak="" class="inputdemoErrors" id="registro" ng-app="myApp">
+  <div layout="row" >
+  <md-sidenav layout-align="start center" md-is-locked-open="true"  flex="20">  
+        <button class="sesion" ui-sref="users">Usuario</button>  
+        <button class="sesion" ui-sref="compras">Compras</button> 
+        <button class="sesion" ui-sref="propiedades">Propiedades</button> 
+
+    </md-sidenav>
+    <md-content flex>
+    <md-toolbar>
+          <h2 class="md-toolbar-tools md-center" >  
+              <span>Registro de compras</span>
+          </h2>
+      </md-toolbar>
+       
+        <div class="container md-pad">
+                 
+             <form name="objCompra">
+               <md-input-container class="padd">
+                <label md-no-asterisk>Seleccionar Jugador:</label>
+                 <md-select md-no-asterisk class="form-control" name="nivel" ng-model="comprasCtrl.nivel" required>
+                  <md-option value="">Seleccione Jugador</md-option>
+                  <md-option ng-model="comprasCtrl.namePlayer" ng-repeat="x in comprasCtrl.users" value="{{x.name}}">{{x.name}}</md-option>
+                </md-select>
+                <div ng-messages="objCompra.nivel.$error">
+                  <div ng-message-exp="'required'">Campo requerido</div>
+                </div>
+              </md-input-container>
+        
+             <md-input-container class="padd">
+                <label md-no-asterisk>Seleccionar propiedad:</label>
+                 <md-select md-no-asterisk class="form-control" name="nivel" ng-model="comprasCtrl.propierty" required>
+                  <md-option value="">Seleccione propiedad</md-option>
+                  <md-option ng-model="comprasCtrl.proprietary" ng-repeat="x in comprasCtrl.propiedades" value="{{x.name}}">{{x.name}}</md-option>
+                </md-select>
+                <div ng-messages="objCompra.nivel.$error">
+                  <div ng-message-exp="'required'">Campo requerido</div>
+                </div>
+              </md-input-container>
+             </form>
+
+
+                  <div>
+                    <md-button class="btn-primary display" ng-click="comprasCtrl.save(objCompra)" type="button">Comprar</md-button>
+                  </div>
+                  
+               
+              <div class="md-padd">
+                <h2>Registro de compras</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nombre del jugador</th>
+                      <th>Nombre de propiedad</th>
+                      <th>Valor de la propiedad</th>
+                      <th>Saldo principal</th>
+                      <th>Eliminar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="objCompra in comprasCtrl.compras">
+                      <td>{{objCompra.id}}</td>
+                      <td>{{objCompra.namePlayer}}</td>
+                      <td>{{objCompra.proprietary}}</td>
+                      <td>{{objCompra.price}}</td>
+                      <td>{{objCompra.moneyPrincipal}}</td>
+                      <td><button ng-click="comprasCtrl.delete(y._id)">Eliminar</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </md-content>  
+  </div>
+</div>
+
